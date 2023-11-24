@@ -1,31 +1,52 @@
+:root {
+  /* horizontal - change this to include left bottom no-repeat? */
+  --blue-to-purple-h: linear-gradient(to right, #3498db, #8e44ad);
+  --teal-to-green-h: linear-gradient(to right, #009688, #4caf50);
+  --orange-to-pink-h: linear-gradient(to right, #ff9800, #e91e63);
+  --gold-to-red-h: linear-gradient(to right, #ffd700, #e74c3c);
+  --turquoise-to-royal-blue-h: linear-gradient(to right, #1abc9c, #3498db);
+  --crimson-to-dark-red-h: linear-gradient(to right, #dc143c, #8b0000);
+  --mauve-to-pink-h: linear-gradient(to right, #e0aaff, #ff66b2);
+  --silver-to-steel-blue-h: linear-gradient(to right, #c0c0c0, #4682b4);
+
+  /* vertical */
+  --blue-to-purple-v: linear-gradient(to bottom, #3498db, #8e44ad);
+  --teal-to-green-v: linear-gradient(to bottom, #009688, #4caf50);
+  --orange-to-pink-v: linear-gradient(to bottom, #ff9800, #e91e63);
+  --gold-to-red-v: linear-gradient(to bottom, #ffd700, #e74c3c);
+  --turquoise-to-royal-blue-v: linear-gradient(to bottom, #1abc9c, #3498db);
+  --crimson-to-dark-red-v: linear-gradient(to bottom, #dc143c, #8b0000);
+  --mauve-to-pink-v: linear-gradient(to bottom, #e0aaff, #ff66b2);
+  --silver-to-steel-blue-v: linear-gradient(to bottom, #c0c0c0, #4682b4);
+}
+
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bottom-right-horizontal-border {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  height: 20px;
+  width: 6rem;
+  border-radius: 0px 0px 10px 0px;
+  z-index: 1;
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.bottom-right-vertical-border {
+  position: absolute;
+  right: 0px;
+  bottom: 6px;
+  height: 6rem;
+  width: 20px;
+  border-radius: 0px 0px 10px 0px;
+  z-index: 1;
+  display: none;
 }
 
 @keyframes App-logo-spin {
@@ -34,5 +55,280 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* --------------- GENERAL STYLING --------------- */
+body {
+  background-color: rgb(30, 30, 30);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* --------------- NAV STYLING --------------- */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15vh;
+  width: 100vw;
+  position: relative;
+  left: 9px;
+  top: 8px;
+  border-top-left-radius: 10px;
+  z-index: 10;
+  background-color: rgb(30, 30, 30);
+}
+
+.nav--logo-container {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.1rem;
+  margin-top: 0.1rem;
+}
+
+.nav--logo {
+  width: 3rem;
+}
+
+.nav--links-container {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-end;
+  padding-right: 1.7rem;
+}
+
+.nav--font-awesome-icon {
+  font-size: 1.7rem;
+  color: rgb(107, 107, 107);
+}
+
+/* --------------- LANDING STYLING --------------- */
+@keyframes fizz-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.top-left-horizontal-border {
+  position: absolute;
+  left: 0px;
+  top: 0;
+  height: 20px;
+  width: 6rem;
+  border-radius: 10px 0px 0px 0px;
+  z-index: 1;
+}
+
+.top-left-vertical-border {
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  height: 6rem;
+  width: 20px;
+  border-radius: 10px 0px 0px 0px;
+  z-index: 0;
+}
+
+.landing--inner-container {
+  color: rgb(196, 195, 195);
+  margin-left: 1.5rem;
+}
+
+.landing--title {
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  animation: fizz-in 1s ease-in;
+}
+
+.landing--information-container {
+  line-height: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+.landing--description-container {
+  border-left: 2px solid;
+  padding: 1.5rem;
+}
+
+.landing--projects-container {
+  color: rgb(196, 195, 195);
+  padding: 0.2rem 3rem;
+}
+
+.landing--projects-title {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* This is now a button so style accordingly */
+.landing--projects-project-title {
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: rgb(196, 195, 195);
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+/* --------------- PROJECT CARD STYLING --------------- */
+@keyframes slideIn {
+  from {
+    right: -400px;
+  }
+  to {
+    right: 0;
+  }
+}
+
+.project-card--container {
+  margin: 0;
+
+  /* Initial position */
+  position: relative;
+  top: 0;
+
+  /* transition in */
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.stay {
+  margin: 0;
+  position: relative;
+  top: 0;
+}
+
+.project-card--title-container {
+  font-size: 0.9rem;
+}
+
+.project-card--title {
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.project-card--description-container {
+  padding: 0 1.5rem 0 1.5rem;
+  border-left: 2px solid;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.project-card--navigation-container {
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  border-bottom: 2px solid transparent;
+}
+
+.project-card--button {
+  background-color: transparent;
+  border-bottom: 3px solid;
+  font-family: 'Poppins', sans-serif;
+}
+
+.project-card--link {
+  padding: 10px;
+  color: rgb(206, 205, 205);
+  font-size: 15px;
+}
+
+/* --------------- FOOTER STYLING --------------- */
+footer {
+  height: 25vh;
+  background-color: rgb(30, 30, 30);
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.footer--copyright {
+  color: rgb(206, 205, 205);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* --------------- MEDIA QUERIES --------------- */
+
+/* --------------- TABLETS --------------- */
+/* --------------- NAV STYLING --------------- */
+@media screen and (min-width: 600px) {
+  .App {
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+    position: absolute;
+  }
+
+  nav {
+    height: 10vh;
+    left: 20px;
+    top: 20px;
+  }
+
+  .nav--logo-container {
+    width: 10%;
+    margin-left: 0.5rem;
+    margin-top: 0rem;
+  }
+
+  .nav--links-container {
+    padding-right: 4rem;
+  }
+
+  /* --------------- LANDING STYLING --------------- */
+  .top-left-horizontal-border {
+    width: 16rem;
+    z-index: 1;
+  }
+
+  .top-left-vertical-border {
+    height: 16rem;
+  }
+
+  .landing--inner-container {
+    margin-left: 3rem;
+  }
+
+  .landing--title {
+    font-size: 6rem;
+  }
+
+  /* --------------- FOOTER STYLING --------------- */
+  footer {
+    position: absolute;
+    right: 20px;
+    bottom: 11px;
+    justify-content: flex-end;
+  }
+
+  .bottom-right-horizontal-border {
+    height: 20px;
+    width: 16rem;
+    display: block;
+  }
+  
+  .bottom-right-vertical-border {
+    height: 16rem;
+    width: 20px;
+    display: block;
+  }
+
+  .footer--copyright {
+    margin-right: 1rem;
   }
 }

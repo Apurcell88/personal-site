@@ -1,23 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Nav from './Components/Nav';
+import Landing from './Components/Landing';
+import Footer from './Components/Footer';
 
 function App() {
+  // STATE MANAGEMENT
+  const [projects, setProjects] = useState([]);
+  const [projectDisplay, setProjectDisplay] = useState(false);
+  const [selectProject, setSelectProject] = useState([]);
+  const [backgroundColor, setBackgroundColor] = useState(['--blue-to-purple-h', '--blue-to-purple-v']);
+  const [isContainerVisible, setIsContainerVisible] = useState(false);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div
+          className='bottom-right-horizontal-border'
+          style={{ background: `var(${backgroundColor[0]})`}}
+        ></div>
+        <div
+          className='bottom-right-vertical-border'
+          style={{ background: `var(${backgroundColor[1]})`}}
+        ></div>
+        <Nav
+          projectDisplay={projectDisplay}
+          setProjectDisplay={setProjectDisplay}
+        />
+        <Landing
+          projects={projects}
+          setProjects={setProjects}
+          projectDisplay={projectDisplay}
+          setProjectDisplay={setProjectDisplay}
+          selectProject={selectProject}
+          setSelectProject={setSelectProject}
+          backgroundColor={backgroundColor}
+          setBackgroundColor={setBackgroundColor}
+          isContainerVisible={isContainerVisible}
+          setIsContainerVisible={setIsContainerVisible}
+        />
+        <Footer backgroundColor={backgroundColor} />
     </div>
   );
 }

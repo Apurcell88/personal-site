@@ -1,0 +1,34 @@
+[
+    {
+      "title": "movie search",
+      "url": "https://apurcell88.github.io/movie-search",
+      "id": "1",
+      "description": "Effortlessly find your favorite movies using the powerful search feature of this website. This was created with themoviedb.org API, React and CSS. This website was styled in the same vain as Netflix.",
+      "gitHubUrl": "https://github.com/Apurcell88/movie-search",
+      "isOpen": "false"
+    },
+    {
+      "title": "nav bar",
+      "url": "https://apurcell88.github.io/navbar",
+      "id": "2",
+      "description": "A simple website showcasing responsive design. Click the products and a menu pop-up appears. This was created with React and CSS.",
+      "gitHubUrl": "https://github.com/Apurcell88/navbar",
+      "isOpen": "false"
+    },
+    {
+      "title": "shopping cart",
+      "url": "https://apurcell88.github.io/shopping-cart/",
+      "id": "3",
+      "description": "An e-commerce website that allows the user to shop for items by category. Features a homepage, shop and shopping cart. This was created with the fake store API, React and CSS.",
+      "gitHubUrl": "https://github.com/Apurcell88/shopping-cart",
+      "isOpen": "false"
+    },
+    {
+      "title": "tenzies",
+      "url": "https://apurcell88.github.io/tenzies",
+      "id": "4",
+      "description": "Play Tenzies, an exciting web-based game showcasing creativity and interactive gameplay. Tenzies is typically intended for a younger audience. This was created with React and CSS.",
+      "gitHubUrl": "https://github.com/Apurcell88/tenzies",
+      "isOpen": "false"
+    }
+  ]
