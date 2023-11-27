@@ -98,12 +98,15 @@ const Landing = ({
                       setIsContainerVisible={setIsContainerVisible}
                     />
                 }
-                <h2 className="landing--projects-title">Projects</h2>
+                
             </div>
             <div className="landing--projects-container">
+                <h2 className="landing--projects-title">
+                  Projects
+                </h2>
                 {projects.map((project) => {
                     return (
-                      <div>
+                      <div className="landing--projects-info-container">
                         <button
                           className="landing--projects-project-title"
                           key={project.id}

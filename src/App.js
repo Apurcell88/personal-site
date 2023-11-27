@@ -13,7 +13,8 @@ function App() {
   const [isContainerVisible, setIsContainerVisible] = useState(false);
   
   return (
-    <div className="App">
+    <div className="master-container">
+      <div className="App">
         <div
           className='bottom-right-horizontal-border'
           style={{ background: `var(${backgroundColor[0]})`}}
@@ -39,7 +40,9 @@ function App() {
           setIsContainerVisible={setIsContainerVisible}
         />
         <Footer backgroundColor={backgroundColor} />
+      </div>
     </div>
+    
   );
 }
 
