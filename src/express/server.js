@@ -1,9 +1,12 @@
-import express from 'express';
-import nodemailer from 'nodemailer';
-import bodyParser from 'body-parser';
+const express = require('express');
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.PORT || 3001;
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
@@ -29,7 +32,6 @@ app.post('/send-email', (req, res) => {
     if (err) {
       return res.status(500).send(err.toString());
     }
-
 
     res.status(200).send(`Email sent: ${info.response}`)
   });

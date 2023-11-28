@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Nav from './Components/Nav';
 import Landing from './Components/Landing';
 import Footer from './Components/Footer';
+import EmailForm from './Components/EmailForm';
 
 function App() {
   // STATE MANAGEMENT
@@ -27,6 +28,7 @@ function App() {
           projectDisplay={projectDisplay}
           setProjectDisplay={setProjectDisplay}
         />
+        <EmailForm />
         <Landing
           projects={projects}
           setProjects={setProjects}

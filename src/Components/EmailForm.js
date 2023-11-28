@@ -1,53 +1,29 @@
-import { useState } from 'react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-const EmailForm = ({ sendEmail }) => {
-  const [emailInfo, setEmailInfo] = useState({
-    to: '',
-    subject: '',
-    text: '',
-  });
+const EmailForm = () => {
+  const form = useRef();
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEmailInfo({...emailInfo, [name]: value});
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    sendEmail(emailInfo);
+
+    emailjs.sendForm('service_3xwvome', 'template_wg0cs5r', form.current, 'RaPyrke9KNUq-EDUY')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-        <label>
-            To:
-            <input
-              type="email"
-              name="to"
-              value={emailInfo.to}
-              onChange={handleInputChange}
-            />
-        </label>
-        <label>
-            Subject:
-            <input
-              type="text"
-              name="subject"
-              value={emailInfo.subject}
-              onChange={handleInputChange}
-            />
-        </label>
-        <label>
-            Message:
-            <textarea
-              name="text"
-              value={emailInfo.text}
-              onChange={handleInputChange}
-              cols="30"
-              rows="10" 
-            />
-        </label>
-        <button type="submit">Send Email</button>
+    <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
     </form>
   );
 }
