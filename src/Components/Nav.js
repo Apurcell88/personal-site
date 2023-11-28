@@ -3,7 +3,11 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Logo from '../assets/logo.png'
 
-const Nav = ({ setProjectDisplay, handleInputChange, emailInfo, sendEmail }) => {
+const Nav = ({
+  setProjectDisplay,
+  displayEmailForm,
+  setDisplayEmailForm
+   }) => {
   const toggleProjectDisplay = () => {
     setProjectDisplay(false);
   }
@@ -22,7 +26,9 @@ const Nav = ({ setProjectDisplay, handleInputChange, emailInfo, sendEmail }) => 
           <FontAwesomeIcon
             className='nav--font-awesome-icon'
             icon={faEnvelope}
-            onClick={sendEmail}
+            onClick={() => {
+              setDisplayEmailForm(!displayEmailForm);
+            }}
           />
           <a href="https://github.com/apurcell88"><FontAwesomeIcon className='nav--font-awesome-icon' icon={faGithub} /></a>
         </div>

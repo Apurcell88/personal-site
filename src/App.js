@@ -12,6 +12,7 @@ function App() {
   const [selectProject, setSelectProject] = useState([]);
   const [backgroundColor, setBackgroundColor] = useState(['--blue-to-purple-h', '--blue-to-purple-v']);
   const [isContainerVisible, setIsContainerVisible] = useState(false);
+  const [displayEmailForm, setDisplayEmailForm] = useState(false);
   
   return (
     <div className="master-container">
@@ -27,8 +28,10 @@ function App() {
         <Nav
           projectDisplay={projectDisplay}
           setProjectDisplay={setProjectDisplay}
+          displayEmailForm={displayEmailForm}
+          setDisplayEmailForm={setDisplayEmailForm}
         />
-        <EmailForm />
+        {displayEmailForm ? <EmailForm /> : ''}
         <Landing
           projects={projects}
           setProjects={setProjects}
