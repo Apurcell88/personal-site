@@ -41,9 +41,13 @@ const EmailForm = ({ sendEmail }) => {
             Message:
             <textarea
               name="text"
+              value={emailInfo.text}
+              onChange={handleInputChange}
               cols="30"
-              rows="10"></textarea>
+              rows="10" 
+            />
         </label>
+        <button type="submit">Send Email</button>
     </form>
   );
 }
