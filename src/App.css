@@ -72,6 +72,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 /* --------------- NAV STYLING --------------- */
 nav {
   display: flex;
@@ -117,8 +121,58 @@ nav {
 }
 
 .nav--font-awesome-icon:hover {
-  color: #fff;
+  color: rgb(148,0,211);
   font-size: 1.8rem;
+}
+
+/* --------------- EMAIL FORM STYLING --------------- */
+.email-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.email-form {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40vw;
+  height: 60%;
+}
+
+.email-contact-me {
+  color: rgb(206, 205, 205);
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+}
+
+label {
+  color: rgb(206, 205, 205);
+}
+
+.email-input {
+  color: black;
+  border: transparent;
+  border-radius: 5px;
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#email-textarea {
+  height: 4rem;
+}
+
+.email-send-btn {
+  margin-top: 0.7rem;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: transparent;
+  color: rgb(206, 205, 206);
+  background-color: rgb(148,0,211);
 }
 
 /* --------------- LANDING STYLING --------------- */
@@ -199,7 +253,7 @@ nav {
 }
 
 .landing--projects-project-title:hover {
-  color: #fff;
+  color: rgb(148,0,211);
 }
 /* --------------- PROJECT CARD STYLING --------------- */
 @keyframes slideIn {
@@ -263,6 +317,11 @@ nav {
   padding: 10px;
   color: rgb(206, 205, 205);
   font-size: 15px;
+  transition: 0.3s;
+}
+
+.project-card--link:hover {
+  color: rgb(148,0,211);
 }
 
 /* --------------- FOOTER STYLING --------------- */
@@ -348,6 +407,60 @@ footer {
 
   .footer--copyright {
     margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* --------------- EMAIL STYLING --------------- */
+  .email-form-container {
+    justify-content: center;
+    height: 65vh;
+    overflow: hidden;
+  }
+  
+  .email-form {
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .email-contact-me {
+    font-size: 3rem;
+  }
+  
+  label {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .email-input {
+    height: 2rem;
+    font-size: 16px;
+    
+  }
+  
+  #email-textarea {
+    height: 6rem;
+    width: 12rem;
+  }
+  
+  .email-send-btn {
+    margin-top: 1rem;
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* --------------- PROJECT CARD STYLING --------------- */
+  .project-card--description-container {
+    font-size: 1.2rem;
+  }
+
+  .project-card--title {
+    font-size: 2.5rem;
+  }
+
+  .project-card--link {
+    font-size: 1.2rem;
   }
 }
 

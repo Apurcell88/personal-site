@@ -13,7 +13,8 @@ const Landing = ({
     backgroundColor,
     setBackgroundColor,
     isContainerVisible,
-    setIsContainerVisible
+    setIsContainerVisible,
+    displayEmailForm,
  }) => {
     useEffect(() => {
         const fetchProjects = async () => {
@@ -77,7 +78,7 @@ const Landing = ({
       }
 
     return (
-        <div className="landing--outer-container">
+        <div className='landing--outer-container'>
             <div className="landing--inner-container">
                 {/* empty divs for the top left border */}
                 <div
@@ -90,7 +91,11 @@ const Landing = ({
                 ></div>
 
                 {!projectDisplay ?
-                    <DefaultLanding backgroundColor={backgroundColor} /> :
+                    <DefaultLanding
+                      backgroundColor={backgroundColor}
+                      displayEmailForm={displayEmailForm}
+                      // setDisplayEmailForm={setDisplayEmailForm}
+                    /> :
                     <ProjectCard
                       project={selectProject}
                       backgroundColor={backgroundColor}
@@ -100,7 +105,7 @@ const Landing = ({
                 }
                 
             </div>
-            <div className="landing--projects-container">
+            <div className={ displayEmailForm ? "hidden" : 'landing--projects-container'}>
                 <h2 className="landing--projects-title">
                   Projects
                 </h2>

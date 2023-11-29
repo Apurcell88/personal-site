@@ -15,40 +15,42 @@ function App() {
   const [displayEmailForm, setDisplayEmailForm] = useState(false);
   
   return (
-    <div className="master-container">
-      <div className="App">
-        <div
-          className='bottom-right-horizontal-border'
-          style={{ background: `var(${backgroundColor[0]})`}}
-        ></div>
-        <div
-          className='bottom-right-vertical-border'
-          style={{ background: `var(${backgroundColor[1]})`}}
-        ></div>
-        <Nav
-          projectDisplay={projectDisplay}
-          setProjectDisplay={setProjectDisplay}
-          displayEmailForm={displayEmailForm}
-          setDisplayEmailForm={setDisplayEmailForm}
-        />
-        {displayEmailForm ? <EmailForm /> : ''}
-        <Landing
-          projects={projects}
-          setProjects={setProjects}
-          projectDisplay={projectDisplay}
-          setProjectDisplay={setProjectDisplay}
-          selectProject={selectProject}
-          setSelectProject={setSelectProject}
-          backgroundColor={backgroundColor}
-          setBackgroundColor={setBackgroundColor}
-          isContainerVisible={isContainerVisible}
-          setIsContainerVisible={setIsContainerVisible}
-        />
-        <Footer backgroundColor={backgroundColor} />
+      <div className="master-container">
+        <div className="App">
+          <div
+            className='bottom-right-horizontal-border'
+            style={{ background: `var(${backgroundColor[0]})`}}
+          ></div>
+          <div
+            className='bottom-right-vertical-border'
+            style={{ background: `var(${backgroundColor[1]})`}}
+          ></div>
+          <Nav
+            projectDisplay={projectDisplay}
+            setProjectDisplay={setProjectDisplay}
+            displayEmailForm={displayEmailForm}
+            setDisplayEmailForm={setDisplayEmailForm}
+          />
+          {displayEmailForm ? <EmailForm backgroundColor={backgroundColor} setDisplayEmailForm={setDisplayEmailForm} /> : ''}
+          <Landing
+            projects={projects}
+            setProjects={setProjects}
+            projectDisplay={projectDisplay}
+            setProjectDisplay={setProjectDisplay}
+            selectProject={selectProject}
+            setSelectProject={setSelectProject}
+            backgroundColor={backgroundColor}
+            setBackgroundColor={setBackgroundColor}
+            isContainerVisible={isContainerVisible}
+            setIsContainerVisible={setIsContainerVisible}
+            displayEmailForm={displayEmailForm}
+            setDisplayEmailForm={setDisplayEmailForm}
+          />
+          <Footer backgroundColor={backgroundColor} />
+        </div>
       </div>
-    </div>
-    
-  );
+      
+    );
 }
 
 export default App;

@@ -1,6 +1,6 @@
-const DefaultLanding = ({ backgroundColor }) => {
+const DefaultLanding = ({ backgroundColor, displayEmailForm }) => {
     return (
-        <div className="landing--information-container">
+        <div className={ displayEmailForm ? "hidden" : "landing--information-container"}>
             <div className="landing--title-container">
                 <h1 className="landing--title">Welcome.</h1>
             </div>

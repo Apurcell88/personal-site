@@ -1,7 +1,12 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-const EmailForm = () => {
+const EmailForm = ({ backgroundColor, setDisplayEmailForm }) => {
+  // INPUT STATES
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -15,16 +20,74 @@ const EmailForm = () => {
       });
   }
 
+  const handleInputChange = (e, setter) => {
+    setter(e.target.value);
+  }
+
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+
+    setName('');
+    setEmail('');
+    setMessage('');
+
+    sendEmail(e);
+    alert('Email has been sent!');
+    setDisplayEmailForm(false);
+  }
+
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send" />
-    </form>
+    <div className='email-form-container'>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className='email-form'
+      >
+        <h1 className='email-contact-me'>Contact Me</h1>
+        <label>Name</label>
+        <input
+          required
+          className='email-input'
+          type="text"
+          name="user_name"
+          style={{ background: `var(${backgroundColor[0]})`}}
+          value={name}
+          onChange={(e) => {
+            handleInputChange(e, setName)
+          }}
+        />
+        <label>Email</label>
+        <input
+          required
+          className='email-input'
+          type="email"
+          name="user_email"
+          style={{ background: `var(${backgroundColor[0]})`}}
+          value={email}
+          onChange={(e) => {
+            handleInputChange(e, setEmail)
+          }}
+        />
+        <label>Message</label>
+        <textarea
+          required
+          className='email-input'
+          id='email-textarea'
+          name="message"
+          style={{ background: `var(${backgroundColor[0]})`}}
+          value={message}
+          onChange={(e) => {
+            handleInputChange(e, setMessage)
+          }}
+        />
+        <input
+          className='email-send-btn'
+          type="submit"
+          value="Send"
+          onClick={handleButtonClick}
+        />
+      </form>
+    </div>
   );
 }
  

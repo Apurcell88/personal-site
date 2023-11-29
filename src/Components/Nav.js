@@ -19,7 +19,10 @@ const Nav = ({
             src={Logo}
             alt="logo"
             className='nav--logo'
-            onClick={toggleProjectDisplay}
+            onClick={() => {
+              toggleProjectDisplay()
+              setDisplayEmailForm(false);
+            }}
           />
         </div>
         <div className='nav--links-container'>
@@ -28,6 +31,7 @@ const Nav = ({
             icon={faEnvelope}
             onClick={() => {
               setDisplayEmailForm(!displayEmailForm);
+              toggleProjectDisplay();
             }}
           />
           <a href="https://github.com/apurcell88"><FontAwesomeIcon className='nav--font-awesome-icon' icon={faGithub} /></a>
